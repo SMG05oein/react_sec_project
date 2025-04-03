@@ -1,0 +1,22 @@
+body{
+  background: url(../public/2D\ weather\ banner.png);
+  height: 100vh;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.layout{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  flex-direction: column; /*이거 안 해도 잘 출력되던데 뭐지*/
+}
+
+.weather-box{
+  text-align: center;
+  border:3px solid white;
+  padding: 50px;
+  border-radius: 30px;
+  background-color: white;
+}
