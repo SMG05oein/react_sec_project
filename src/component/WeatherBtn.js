@@ -1,15 +1,22 @@
 import React from 'react'
 import { Button } from 'react-bootstrap';
+import "../App.css";
 
-const WeatherBtn = () => {
+const WeatherBtn = ({city, cities, setCity}) => {
+    console.log("도시는 " + cities);
+
+    
 return (
     <div>
-    <Button variant="primary">Primary</Button>
-    <Button variant="primary">Seoul</Button>
-    <Button variant="primary">Berlin</Button>
-    <Button variant="primary">Moscow</Button>
-    <Button variant="primary">London</Button>
-    
+    <Button variant={`${city == null ? "primary" : "secondary"}`} onClick={()=>setCity(null)} >현 위치</Button>
+    {cities.map((item , idx) => (
+        <Button variant={`${city == item ? "primary" : "secondary"}`} key={idx} 
+        onClick={()=>setCity(item)}>
+            {item}
+        </Button>
+        ))}
+
+
     </div>
 )
 }
