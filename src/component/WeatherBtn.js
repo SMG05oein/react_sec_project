@@ -8,9 +8,12 @@ const WeatherBtn = ({city, cities, setCity}) => {
     
 return (
     <div>
-    <Button variant={`${city == null ? "primary" : "secondary"}`} onClick={()=>setCity(null)} >현 위치</Button>
+    <Button variant={`${city == null ? "primary" : "secondary"}`} onClick={()=>setCity(null)} >
+        현 위치
+    </Button>
+
     {cities.map((item , idx) => (
-        <Button variant={`${city == item ? "primary" : "secondary"}`} key={idx} 
+        <Button variant={`${city === item ? "primary" : "secondary"}`} key={idx}
         onClick={()=>setCity(item)}>
             {item}
         </Button>
