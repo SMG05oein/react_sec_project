@@ -10,7 +10,7 @@ body{
   justify-content: center;
   align-items: center;
   height: 100vh;
-  flex-direction: column; /*ÀÌ°Å ¾È ÇØµµ Àß Ãâ·ÂµÇ´øµ¥ ¹¹Áö*/
+  flex-direction: column; /*ï¿½Ì°ï¿½ ï¿½ï¿½ ï¿½Øµï¿½ ï¿½ï¿½ ï¿½ï¿½ÂµÇ´ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½*/
 }
 
 .weather-box{
@@ -28,4 +28,27 @@ body{
   font-size: 6px;
   transform: translateX(-50%);
   color: white;
+}
+
+.suggestion-box {
+  position: absolute;
+  margin-top: -50px;
+  right: 250px;
+  background-color: white;
+  list-style: none;
+  /*margin-top: 5px;*/
+  /*padding: 10px;*/
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+  width: 318px;
+  z-index: 10;
+}
+
+.suggestion-box li {
+  padding: 5px;
+  cursor: pointer;
+}
+
+.suggestion-box li:hover {
+  background-color: #f0f0f0;
 }

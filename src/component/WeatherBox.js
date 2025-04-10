@@ -6,15 +6,16 @@ import React from 'react'
 가지고 올 때 주의사항: 값을 던질 때 키값(파라미터 명)이 받는 쪽에서 이름이 같아야 함 */
 const WeatherBox = ({weather}) => {
     console.log("날씨는" + weather);
+    try {
+        return (
+            <div className="weather-box">
+                <div>{weather ? "선택한 위치: " + weather.name : ""}</div>
+                <h2>{weather ? weather.main.temp : ""}°C
+                    | {weather ? (weather.main.temp * 1.8 + 32).toFixed(2) : ""}°F</h2>
+                <h3>{weather ? weather.weather[0].description : ""}</h3>
 
-return (
-    <div className="weather-box">
-        <div>{weather ? "선택한 위치: " + weather.name : ""}</div>
-        <h2>{weather ? weather.main.temp : ""}°C | {weather ? (weather.main.temp*1.8+32).toFixed(2) : ""}°F</h2>
-        <h3>{weather ? weather.weather[0].description : ""}</h3>
-
-    </div>
-)
+            </div>
+        )
+    }catch(err) {alert("오류 발생 페이지를 새로고침 합니다");window.location.reload();}
 }
-
 export default WeatherBox
